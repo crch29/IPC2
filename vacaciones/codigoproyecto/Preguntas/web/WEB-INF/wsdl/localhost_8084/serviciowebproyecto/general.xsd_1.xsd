@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ipc2/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ipc2/">
+
+<xs:element name="cerrarconexion" type="tns:cerrarconexion" />
+
+<xs:element name="cerrarconexionResponse" type="tns:cerrarconexionResponse" />
+
+<xs:element name="consultalistas" type="tns:consultalistas" />
+
+<xs:element name="consultalistasResponse" type="tns:consultalistasResponse" />
+
+<xs:element name="consultarUsuario" type="tns:consultarUsuario" />
+
+<xs:element name="consultarUsuarioResponse" type="tns:consultarUsuarioResponse" />
+
+<xs:element name="consultarcurso" type="tns:consultarcurso" />
+
+<xs:element name="consultarcursoResponse" type="tns:consultarcursoResponse" />
+
+<xs:element name="consultarestudiante" type="tns:consultarestudiante" />
+
+<xs:element name="consultarestudianteResponse" type="tns:consultarestudianteResponse" />
+
+<xs:element name="consultaritem" type="tns:consultaritem" />
+
+<xs:element name="consultaritemResponse" type="tns:consultaritemResponse" />
+
+<xs:element name="generarconsultapreguntas" type="tns:generarconsultapreguntas" />
+
+<xs:element name="generarconsultapreguntasResponse" type="tns:generarconsultapreguntasResponse" />
+
+<xs:element name="ingresar" type="tns:ingresar" />
+
+<xs:element name="ingresarResponse" type="tns:ingresarResponse" />
+
+<xs:complexType name="ingresar">
+<xs:sequence>
+<xs:element name="instruccion" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="cerrarconexion">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="cerrarconexionResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="generarconsultapreguntas">
+<xs:sequence>
+<xs:element name="cadenaconsulta" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="generarconsultapreguntasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:pregunta" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="pregunta">
+<xs:sequence>
+<xs:element name="codcurso" type="xs:int" />
+<xs:element name="codpregunta" type="xs:int" />
+<xs:element name="descripcion" type="xs:string" minOccurs="0" />
+<xs:element name="nivel" type="xs:string" minOccurs="0" />
+<xs:element name="puntos" type="xs:int" />
+<xs:element name="respuesta" type="xs:string" minOccurs="0" />
+<xs:element name="respuesta1" type="xs:string" minOccurs="0" />
+<xs:element name="respuesta2" type="xs:string" minOccurs="0" />
+<xs:element name="tiempo" type="xs:int" />
+<xs:element name="estadoRespuesta" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaritem">
+<xs:sequence>
+<xs:element name="consultaitem" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaritemResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:item" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="item">
+<xs:sequence>
+<xs:element name="bonusneg" type="xs:int" />
+<xs:element name="bonuspos" type="xs:int" />
+<xs:element name="coditem" type="xs:int" />
+<xs:element name="efectividad" type="xs:int" />
+<xs:element name="estado" type="xs:boolean" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="rareza" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarUsuario">
+<xs:sequence>
+<xs:element name="consultausuario" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarUsuarioResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:usuario" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="carnet" type="xs:int" />
+<xs:element name="contraseña" type="xs:string" minOccurs="0" />
+<xs:element name="estado" type="xs:boolean" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="tipousuario" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultalistas">
+<xs:sequence>
+<xs:element name="consulta" type="xs:string" minOccurs="0" />
+<xs:element name="parametro" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultalistasResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarestudiante">
+<xs:sequence>
+<xs:element name="consultaestudiante" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarestudianteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:estudiante" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="estudiante">
+<xs:sequence>
+<xs:element name="apellido" type="xs:string" minOccurs="0" />
+<xs:element name="carrera" type="xs:string" minOccurs="0" />
+<xs:element name="codestudiante" type="xs:int" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="universidad" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarcurso">
+<xs:sequence>
+<xs:element name="consultacurso" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarcursoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:curso" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="curso">
+<xs:sequence>
+<xs:element name="carrera" type="xs:int" />
+<xs:element name="codcurso" type="xs:int" />
+<xs:element name="estadocurso" type="xs:boolean" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

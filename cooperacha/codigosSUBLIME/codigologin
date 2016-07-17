@@ -1,0 +1,53 @@
+
+        <form name="pregunta" role="form">
+         <div class="text-center container">
+          <h1>USUARIOS</h1> 
+          <div class="form-group">
+              <h5>carnet</h5>
+
+        <%
+            
+            try {
+            ipc2.General_Service service = new ipc2.General_Service();
+            ipc2.General port = service.getGeneralPort();
+             // TODO initialize WS operation arguments here
+            java.lang.String consulta = "select * from estudiante;";
+            java.lang.String parametro = "carnet";
+            // TODO process result here
+            java.util.List<java.lang.Object> result = port.consultalistas(consulta, parametro);
+            %> <select name="carnet" class="form-group"><%
+                for(int i=0;i<result.size();i++){
+                    %><option><%=result.get(i)%></option><%
+                }
+                } catch (Exception ex) {
+                    // TODO handle custom exceptions here
+                }
+        %></select>
+            <h5>nickname</h5>
+            <input type="text" name="nickname">
+            <h5>contraseña</h5>
+            <input type="password" name="contraseña">
+            <button class="btn btn-primary" type="submit" name="enviar">crear usuario</button>
+                    
+           </div>
+ 
+        </div>
+            
+      <%
+          if(request.getParameter("nickname")!=null){
+            String carnet = request.getParameter("carnet");
+            String nickname = request.getParameter("nickname");
+            String contraseña = request.getParameter("contraseña");
+            try {
+                ipc2.General_Service service = new ipc2.General_Service();
+                ipc2.General port = service.getGeneralPort();
+                 // TODO initialize WS operation arguments here
+                java.lang.String instruccion = String.format("insert into usuario(carnet,nombre,contraseña) values(%s,'%s','%s');",carnet,nickname,contraseña);
+                port.ingresar(instruccion);
+                port.cerrarconexion();
+            } catch (Exception ex) {
+                
+            }
+          }
+    %>
+       </form>

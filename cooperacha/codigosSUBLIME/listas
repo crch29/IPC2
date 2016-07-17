@@ -1,0 +1,41 @@
+<%
+    try {
+	ipc2.General_Service service = new ipc2.General_Service();
+	ipc2.General port = service.getGeneralPort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String consultacurso = "select * from curso;";
+	// TODO process result here
+	java.util.List<ipc2.Curso> result = port.consultarcurso(consultacurso);
+        %><table class="table table-striped table-bordered table-hover table-condensed"><tr>
+                <td>CODIGO CURSO</td>
+                <td>NOMBRE CURSO</td>
+                <td>CARRERA</td>
+               <td>MODERAR</td>
+        </tr>
+            <%
+                
+for(int i=0;i<result.size();i++){
+            %><tr><%
+            ipc2.Curso cr = result.get(i);
+            
+            %>
+                    <td><%out.println(cr.getCodcurso());%></td>
+                    <td><%out.println(cr.getNombre());%></td>
+                    <td><%out.println(cr.getCarrera());%></td>
+                    <td><select name="<%=cr.getCodcurso()%>" class="form-group"><option value="false">false</option><option value="true">true</option></select> </td>
+                     
+            </tr><%
+             
+    }
+%></table><%
+    
+}catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }          
+       
+           
+            
+
+
+    
+    %>

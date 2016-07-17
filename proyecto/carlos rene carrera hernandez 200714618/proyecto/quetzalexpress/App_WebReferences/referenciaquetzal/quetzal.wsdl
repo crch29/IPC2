@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="www.google.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="www.google.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="www.google.com">
+      <s:element name="InsertarActualizarEliminar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instruccioninsert" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertarActualizarEliminarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Consultarbasedatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="instruccionselect" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConsultarbasedatosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarbasedatosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tabla" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ruta" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cargarDatosResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertarActualizarEliminarSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarEliminar" />
+  </wsdl:message>
+  <wsdl:message name="InsertarActualizarEliminarSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertarActualizarEliminarResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarbasedatosSoapIn">
+    <wsdl:part name="parameters" element="tns:Consultarbasedatos" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarbasedatosSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarbasedatosResponse" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosSoapIn">
+    <wsdl:part name="parameters" element="tns:cargarDatos" />
+  </wsdl:message>
+  <wsdl:message name="cargarDatosSoapOut">
+    <wsdl:part name="parameters" element="tns:cargarDatosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="quetzalSoap">
+    <wsdl:operation name="InsertarActualizarEliminar">
+      <wsdl:input message="tns:InsertarActualizarEliminarSoapIn" />
+      <wsdl:output message="tns:InsertarActualizarEliminarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Consultarbasedatos">
+      <wsdl:input message="tns:ConsultarbasedatosSoapIn" />
+      <wsdl:output message="tns:ConsultarbasedatosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatos">
+      <wsdl:input message="tns:cargarDatosSoapIn" />
+      <wsdl:output message="tns:cargarDatosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="quetzalSoap" type="tns:quetzalSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarActualizarEliminar">
+      <soap:operation soapAction="www.google.com/InsertarActualizarEliminar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consultarbasedatos">
+      <soap:operation soapAction="www.google.com/Consultarbasedatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatos">
+      <soap:operation soapAction="www.google.com/cargarDatos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="quetzalSoap12" type="tns:quetzalSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertarActualizarEliminar">
+      <soap12:operation soapAction="www.google.com/InsertarActualizarEliminar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Consultarbasedatos">
+      <soap12:operation soapAction="www.google.com/Consultarbasedatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cargarDatos">
+      <soap12:operation soapAction="www.google.com/cargarDatos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="quetzal">
+    <wsdl:port name="quetzalSoap" binding="tns:quetzalSoap">
+      <soap:address location="http://localhost:51029/quetzal.asmx" />
+    </wsdl:port>
+    <wsdl:port name="quetzalSoap12" binding="tns:quetzalSoap12">
+      <soap12:address location="http://localhost:51029/quetzal.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

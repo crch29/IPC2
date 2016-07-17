@@ -1,0 +1,29 @@
+servicio.Servicioenvios_Service service = new servicio.Servicioenvios_Service();
+        servicio.Servicioenvios port = service.getServicioenviosPort();
+        java.util.List<servicio.Recompensa> rec = port.consultarRecompensa();
+        DefaultTableModel modelo= new DefaultTableModel();
+        jTable1.setModel(modelo);
+        modelo.addColumn("codigo");
+        modelo.addColumn("stock");
+        modelo.addColumn("precio_unidad");
+        modelo.addColumn("descripcion");
+        modelo.addColumn("tipo");
+        modelo.addColumn("estado");
+        modelo.addColumn("cod_iniciativa");
+        modelo.addColumn("entregado");
+        
+        
+            Object registro[]= new Object[7];
+            servicio.Recompensa recompensa= rec.get(1);
+            registro[0]= recompensa.getCodRecompensa();
+            registro[1]= recompensa.getStock();
+            registro[2]= recompensa.getPrecioUnidad();
+            registro[3]= recompensa.getDescripcion();
+            registro[4]= recompensa.getTipo();
+            registro[5]= recompensa.getEstado();
+            registro[6]= recompensa.getCodIniciativa();
+            registro[7]= recompensa.getEntregado();
+            modelo.addRow(registro);
+           
+        
+        

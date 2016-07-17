@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://my.org/ns/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://my.org/ns/">
+
+<xs:element name="acreditarCuenta" type="tns:acreditarCuenta" />
+
+<xs:element name="acreditarCuentaResponse" type="tns:acreditarCuentaResponse" />
+
+<xs:element name="cuentaNueva" type="tns:cuentaNueva" />
+
+<xs:element name="cuentaNuevaResponse" type="tns:cuentaNuevaResponse" />
+
+<xs:element name="debitarCuenta" type="tns:debitarCuenta" />
+
+<xs:element name="debitarCuentaResponse" type="tns:debitarCuentaResponse" />
+
+<xs:element name="debitarTarjeta" type="tns:debitarTarjeta" />
+
+<xs:element name="debitarTarjetaResponse" type="tns:debitarTarjetaResponse" />
+
+<xs:element name="getCuentasAsociadas" type="tns:getCuentasAsociadas" />
+
+<xs:element name="getCuentasAsociadasResponse" type="tns:getCuentasAsociadasResponse" />
+
+<xs:element name="getEstadoCta" type="tns:getEstadoCta" />
+
+<xs:element name="getEstadoCtaResponse" type="tns:getEstadoCtaResponse" />
+
+<xs:element name="operation" type="tns:operation" />
+
+<xs:element name="operationResponse" type="tns:operationResponse" />
+
+<xs:complexType name="operation">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="operationResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCuentasAsociadas">
+<xs:sequence>
+<xs:element name="carnet" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getCuentasAsociadasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cuentaAhorro" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cuentaAhorro">
+<xs:sequence>
+<xs:element name="noCuenta" type="xs:int" />
+<xs:element name="carnet" type="xs:int" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="apellido" type="xs:string" minOccurs="0" />
+<xs:element name="monto" type="xs:float" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEstadoCta">
+<xs:sequence>
+<xs:element name="cuen" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getEstadoCtaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:historial" nillable="true" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="historial">
+<xs:sequence>
+<xs:element name="hcuentaD" type="xs:int" />
+<xs:element name="hcuentaO" type="xs:int" />
+<xs:element name="hmonto" type="xs:float" />
+<xs:element name="noTransferencia" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="debitarTarjeta">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="debitarTarjetaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acreditarCuenta">
+<xs:sequence>
+<xs:element name="noCuenta" type="xs:int" />
+<xs:element name="monto" type="xs:float" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="acreditarCuentaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="debitarCuenta">
+<xs:sequence>
+<xs:element name="noCuenta" type="xs:int" />
+<xs:element name="monto" type="xs:float" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="debitarCuentaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cuentaNueva">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+<xs:element name="apellido" type="xs:string" minOccurs="0" />
+<xs:element name="monto" type="xs:float" />
+<xs:element name="carnet" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cuentaNuevaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

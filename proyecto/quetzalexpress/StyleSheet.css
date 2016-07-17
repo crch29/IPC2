@@ -1,0 +1,12 @@
+﻿body {
+}
+.nuevoEstilo3 {
+    font-family: "Comic Sans MS";
+    font-size: x-large;
+    font-weight: bold;
+    font-style: oblique;
+    font-variant: normal;
+    text-transform: capitalize;
+    background-color: #F2DEDE;
+    background-repeat: repeat;
+}

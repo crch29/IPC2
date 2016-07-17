@@ -1,0 +1,27 @@
+@WebMethod(operationName = "actualizarRecompensa")
+    public void actualizarRecompensa(@WebParam(name = "cod_rec") int cod_rec) {
+        try{
+            conexiones con= new conexiones();
+            con.conectar();
+            String sentencia = String.format("update Recompensa set entregado='true', stock=stock-1 where cod_recompensa=%d;",cod_rec);
+            con.agregar(sentencia);
+            con.cerrar();
+        }catch(Exception e){
+            
+        }
+    }
+
+
+
+    TableModel mod= jTable2.getModel();
+        int filas= mod.getRowCount();
+        servicio.Servicioenvios_Service service = new servicio.Servicioenvios_Service();
+        servicio.Servicioenvios port = service.getServicioenviosPort();
+        for(int i=0;i<filas;i++){
+            int cod_recompensa= Integer.parseInt(mod.getValueAt(i,0).toString());
+            String entregado= mod.getValueAt(i,7).toString();
+            if(entregado=="true"){
+                
+            }
+            
+        }

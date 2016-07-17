@@ -1,0 +1,19 @@
+Curso curso = new Curso();
+        File archivo = new File("C:\\Users\\carlosrene\\Desktop\\archivo.txt");
+        String cadenajson="";
+        String nombre="";
+        
+        try{
+                Scanner entrada = new Scanner(archivo);
+                while(entrada.hasNext()){
+                    cadenajson=cadenajson+entrada.next();
+                }
+                
+                Gson gson= new Gson();
+                curso= gson.fromJson(cadenajson, Curso.class);
+                nombre= curso.getNombre();
+              
+           }catch(Exception e){
+
+           }
+        return nombre;

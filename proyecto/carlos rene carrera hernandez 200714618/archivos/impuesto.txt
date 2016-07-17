@@ -1,0 +1,2 @@
+accesorios,0.10
+general,0.20

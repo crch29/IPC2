@@ -1,0 +1,2 @@
+,jose,gonzalez,2340679870101,22223030,2300,california,1
+,pedro,rosales,4341765450908,23245050,2900,los angeles,1

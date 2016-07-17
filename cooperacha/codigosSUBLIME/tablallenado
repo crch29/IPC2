@@ -1,0 +1,20 @@
+%><table class="table table-striped table-bordered table-hover table-condensed"><tr>
+                <td>Datos estudiante</td>
+                <td>Modificar</td>
+           </tr>
+            <%
+	for(int i=0;i<result.size();i++){
+            
+            ipc2.Estudiante es = result.get(i);
+            %>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    <tr><%out.println();%></tr>
+                    
+            <%
+        }%></table>

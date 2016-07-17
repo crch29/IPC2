@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ipc2/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ipc2/">
+
+<xs:element name="ingresar" type="tns:ingresar" />
+
+<xs:element name="ingresarResponse" type="tns:ingresarResponse" />
+
+<xs:complexType name="ingresar">
+<xs:sequence>
+<xs:element name="instruccion" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarResponse">
+<xs:sequence />
+</xs:complexType>
+</xs:schema>

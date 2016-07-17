@@ -1,0 +1,2 @@
+,carlos,carrera,2263768420101,32526572,3000,guatemala,20000
+,mario,hernandez,123123123123,32564356,2500,villa nueva,20000

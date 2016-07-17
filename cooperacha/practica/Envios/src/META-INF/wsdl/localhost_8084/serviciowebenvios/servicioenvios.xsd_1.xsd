@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://servicio/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicio/">
+
+<xs:element name="actualizardonaciones" type="tns:actualizardonaciones" />
+
+<xs:element name="actualizardonacionesResponse" type="tns:actualizardonacionesResponse" />
+
+<xs:element name="actualizarpaquete" type="tns:actualizarpaquete" />
+
+<xs:element name="actualizarpaqueteResponse" type="tns:actualizarpaqueteResponse" />
+
+<xs:element name="asignarruta" type="tns:asignarruta" />
+
+<xs:element name="asignarrutaResponse" type="tns:asignarrutaResponse" />
+
+<xs:element name="consultarDonaciones" type="tns:consultarDonaciones" />
+
+<xs:element name="consultarDonacionesResponse" type="tns:consultarDonacionesResponse" />
+
+<xs:element name="consultarpaquetes" type="tns:consultarpaquetes" />
+
+<xs:element name="consultarpaquetesResponse" type="tns:consultarpaquetesResponse" />
+
+<xs:element name="consultarpaquetesRuta" type="tns:consultarpaquetesRuta" />
+
+<xs:element name="consultarpaquetesRutaResponse" type="tns:consultarpaquetesRutaResponse" />
+
+<xs:element name="consultarrutanombre" type="tns:consultarrutanombre" />
+
+<xs:element name="consultarrutanombreResponse" type="tns:consultarrutanombreResponse" />
+
+<xs:element name="consultaruta" type="tns:consultaruta" />
+
+<xs:element name="consultarutaResponse" type="tns:consultarutaResponse" />
+
+<xs:element name="crearenvio" type="tns:crearenvio" />
+
+<xs:element name="crearenvioResponse" type="tns:crearenvioResponse" />
+
+<xs:element name="obtenerdirecciondonacion" type="tns:obtenerdirecciondonacion" />
+
+<xs:element name="obtenerdirecciondonacionResponse" type="tns:obtenerdirecciondonacionResponse" />
+
+<xs:complexType name="consultarrutanombre">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarrutanombreResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizardonaciones">
+<xs:sequence>
+<xs:element name="cod_donacion" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizardonacionesResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="obtenerdirecciondonacion">
+<xs:sequence>
+<xs:element name="cod_donacion" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerdirecciondonacionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultaruta">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarutaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:ruta" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ruta">
+<xs:sequence>
+<xs:element name="cod_ruta" type="xs:int" />
+<xs:element name="costo" type="xs:double" />
+<xs:element name="nombre" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarpaquete">
+<xs:sequence>
+<xs:element name="cod_envio" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarpaqueteResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="asignarruta">
+<xs:sequence>
+<xs:element name="ruta" type="xs:string" minOccurs="0" />
+<xs:element name="cod_envio" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="asignarrutaResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarpaquetes">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarpaquetesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:envio" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="envio">
+<xs:sequence>
+<xs:element name="cod_donacion" type="xs:int" />
+<xs:element name="cod_envio" type="xs:int" />
+<xs:element name="cod_ruta" type="xs:int" />
+<xs:element name="destino" type="xs:string" minOccurs="0" />
+<xs:element name="estado" type="xs:string" minOccurs="0" />
+<xs:element name="fecha_creacion" type="xs:string" minOccurs="0" />
+<xs:element name="fecha_entrega" type="xs:string" minOccurs="0" />
+<xs:element name="precio_envio" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarDonaciones">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarDonacionesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:donacion" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="donacion">
+<xs:sequence>
+<xs:element name="aprobacion" type="xs:string" minOccurs="0" />
+<xs:element name="cod_donacion" type="xs:int" />
+<xs:element name="cod_iniciativa" type="xs:int" />
+<xs:element name="cod_recompensa" type="xs:int" />
+<xs:element name="cod_usuario" type="xs:int" />
+<xs:element name="fecha" type="xs:string" minOccurs="0" />
+<xs:element name="monto" type="xs:double" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearenvio">
+<xs:sequence>
+<xs:element name="fecha_creacion" type="xs:string" minOccurs="0" />
+<xs:element name="destino" type="xs:string" minOccurs="0" />
+<xs:element name="cod_donacion" type="xs:int" />
+<xs:element name="estado" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="crearenvioResponse">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarpaquetesRuta">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="consultarpaquetesRutaResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:envio" minOccurs="0" maxOccurs="unbounded" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

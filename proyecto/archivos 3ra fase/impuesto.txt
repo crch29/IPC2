@@ -1,0 +1,2 @@
+joyeria,1.2
+video,1.32

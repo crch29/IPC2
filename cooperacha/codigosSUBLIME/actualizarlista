@@ -1,0 +1,16 @@
+for(int i=0;i<listadocodigosu.size();i++){
+                String esta=listadoestadosu.get(i);
+                String cod=listadocodigosu.get(i);
+                try {
+                    ipc2.General_Service servicios = new ipc2.General_Service();
+                    ipc2.General portos = servicios.getGeneralPort();
+                     // TODO initialize WS operation arguments here
+                    java.lang.String instruccion = String.format("update usuario set estado_usuario='%s' where nombre='%s';",esta,cod);
+                    portos.ingresar(instruccion);
+                } catch (Exception ex) {
+                    // TODO handle custom exceptions here
+                }
+                
+            }
+
+            

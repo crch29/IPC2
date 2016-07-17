@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://10.56.250.125:8084/banco2/API?wsdl" uri="wsdl/10.56.250.125_8084/banco2/API.wsdl"/>
+    <system systemId="http://10.56.250.125:8084/banco2/API?xsd=1" uri="wsdl/10.56.250.125_8084/banco2/API.xsd_1.xsd"/>
+</catalog>
